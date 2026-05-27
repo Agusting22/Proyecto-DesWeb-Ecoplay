@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecoplay - Venta de Productos para PC</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Ecoplay</h1>
-        <p>Tienda de productos para PC</p>
-    </header>
-
     <nav>
+        <a href="#inicio" class="nav-logo">
+            <img src="assets/logo.png" alt="Ecoplay">
+            <span class="nav-titulo">ECOPLAY</span>
+        </a>
+
+        <form class="nav-buscador" role="search" onsubmit="event.preventDefault();">
+            <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+            <button type="submit" aria-label="Buscar"><img src="assets/searchIcon.svg" alt=""></button>
+        </form>
+
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
@@ -20,51 +25,197 @@
         </ul>
     </nav>
 
+    <header>
+        <h1>Ecoplay</h1>
+        <p>Tienda de productos para PC</p>
+    </header>
+
+    <section class="barra-promocional">
+        <div class="barra-imagen" role="img" aria-label="Setup Gamer"></div>
+        <div class="barra-contenido">
+            <h2>Armá tu PC</h2>
+            <p>Configurá tu nueva PC sin errores de compatibilidad, seleccionando todos los componentes que deseas.</p>
+            <button class="barra-boton">Ver más</button>
+        </div>
+    </section>
+
     <div class="contenedor">
-        <div class="barra-promocional">
-            <div class="barra-imagen">
-                <img src="https://via.placeholder.com/400x200/FD5503/ffffff?text=Setup+Gamer" alt="Setup Gamer">
+        <h2>Productos Disponibles</h2>
+
+        <div class="productos">
+            <div class="producto">
+                <span class="oferta">25% OFF</span>
+                <img src="/assets/Fondo de “ryzen 7” eliminado.png" alt="Procesador Intel i5">
+                <h3>Procesador Ryzen 7 5700x</h3>
+                <p>Precio: $250</p>
+                <p class="cuotas">6 cuotas de $42</p>
+                <p>Potente procesador para gaming</p>
+                <button>Ver</button>
             </div>
-            <div class="barra-contenido">
-                <h2>Armá tu PC</h2>
-                <p>Configurá tu nueva PC sin errores de compatibilidad, seleccionando todos los componentes que deseas.</p>
-                <button class="barra-boton">Ver más</button>
+
+            <div class="producto">
+                <img src="assets/Fondo de “grafica” eliminado.png" alt="Tarjeta Gráfica RTX 4060">
+                <h3>Tarjeta Gráfica RTX 4060 MSI</h3>
+                <p>Precio: $400</p>
+                <p class="cuotas">6 cuotas de $67</p>
+                <p>Excelente para juegos 1080p</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <span class="oferta oferta-40">40% OFF</span>
+                <img src="assets/Fondo de “16gb ram” eliminado.png" alt="Memoria RAM 16GB">
+                <h3>Memoria RAM 16GB</h3>
+                <p>Precio: $80</p>
+                <p class="cuotas">6 cuotas de $13</p>
+                <p>Memoria rápida para multitarea</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <img src="assets/ssd_1tb-removebg-preview.png" alt="SSD 1TB">
+                <h3>SSD 1TB</h3>
+                <p>Precio: $120</p>
+                <p class="cuotas">6 cuotas de $20</p>
+                <p>Almacenamiento rápido</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <span class="oferta">25% OFF</span>
+                <div class="producto-placeholder">⚡</div>
+                <h3>Fuente de Poder 750W 80+ Gold</h3>
+                <p>Precio: $90</p>
+                <p class="cuotas">6 cuotas de $15</p>
+                <p>Eficiencia y estabilidad garantizada</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <span class="oferta oferta-40">40% OFF</span>
+                <div class="producto-placeholder">🖥️</div>
+                <h3>Monitor 27" 144Hz QHD</h3>
+                <p>Precio: $300</p>
+                <p class="cuotas">6 cuotas de $50</p>
+                <p>Pantalla fluida para gaming</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <div class="producto-placeholder">⌨️</div>
+                <h3>Teclado Mecánico RGB</h3>
+                <p>Precio: $75</p>
+                <p class="cuotas">6 cuotas de $12</p>
+                <p>Switches azules retroiluminados</p>
+                <button>Ver</button>
+            </div>
+
+            <div class="producto">
+                <span class="oferta">25% OFF</span>
+                <div class="producto-placeholder">🖱️</div>
+                <h3>Mouse Gamer 16000 DPI</h3>
+                <p>Precio: $50</p>
+                <p class="cuotas">6 cuotas de $8</p>
+                <p>Sensor óptico de alta precisión</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
             </div>
         </div>
 
-        <h2>Productos Disponibles</h2>
-        
-        <div class="productos">
+        <h2 class="titulo-categorias">Explorá por Categoría</h2>
+
+        <div class="categorias">
+            <a href="#" class="categoria categoria-destacada cat-pc-escritorio">
+                <h3>PC de Escritorio</h3>
+                <p>Equipos completos listos para gaming, trabajo o creación de contenido.</p>
+                <span class="categoria-cta">Explorar →</span>
+            </a>
+
+            <a href="#" class="categoria cat-perifericos">
+                <h3>Periféricos</h3>
+                <p>Teclados y mouses</p>
+            </a>
+
+            <a href="#" class="categoria">
+                <h3>Monitores</h3>
+                <p>Pantallas gaming y pro</p>
+            </a>
+
+            <a href="#" class="categoria">
+                <h3>Conectividad</h3>
+                <p>Routers, cables y hubs</p>
+            </a>
+
+            <a href="#" class="categoria">
+                <h3>Placas Madre</h3>
+                <p>Compatibles AMD e Intel</p>
+            </a>
+
+            <a href="#" class="categoria cat-almacenamiento">
+                <h3>Almacenamiento</h3>
+                <p>SSDs, HDDs y NVMe</p>
+            </a>
+
+            <a href="#" class="categoria cat-sillas-gamer">
+                <h3>Sillas Gamer</h3>
+                <p>Comodidad para largas sesiones</p>
+            </a>
+
+            <a href="#" class="categoria">
+                <h3>Audio</h3>
+                <p>Auriculares y parlantes</p>
+            </a>
+
+            <a href="#" class="categoria cat-gabinetes">
+                <h3>Gabinetes</h3>
+                <p>ATX, micro y mini ITX</p>
+            </a>
+        </div>
+
+        <div class="productos productos-resto">
             <div class="producto">
-                <img src="Fondo de “ryzen 7” eliminado.png" alt="Procesador Intel i5">
-                <h3>Procesador Ryzen 7 5700x</h3>
-                <p>Precio: $250</p>
-                <p>Potente procesador para gaming</p>
-                <button>Comprar</button>
+                <span class="oferta oferta-40">40% OFF</span>
+                <div class="producto-placeholder">🎧</div>
+                <h3>Auriculares Gaming 7.1</h3>
+                <p>Precio: $65</p>
+                <p class="cuotas">6 cuotas de $11</p>
+                <p>Sonido envolvente con micrófono</p>
+                <button>Ver</button>
             </div>
 
             <div class="producto">
-                <img src="Fondo de “grafica” eliminado.png" alt="Tarjeta Gráfica RTX 4060">
-                <h3>Tarjeta Gráfica RTX 4060 MSI</h3>
-                <p>Precio: $400</p>
-                <p>Excelente para juegos 1080p</p>
-                <button>Comprar</button>
+                <div class="producto-placeholder">🔧</div>
+                <h3>Motherboard B550 ATX</h3>
+                <p>Precio: $180</p>
+                <p class="cuotas">6 cuotas de $30</p>
+                <p>Compatible con Ryzen serie 5000</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
             </div>
 
             <div class="producto">
-                <img src="Fondo de “16gb ram” eliminado.png" alt="Memoria RAM 16GB">
-                <h3>Memoria RAM 16GB</h3>
-                <p>Precio: $80</p>
-                <p>Memoria rápida para multitarea</p>
-                <button>Comprar</button>
+                <span class="oferta">25% OFF</span>
+                <div class="producto-placeholder">❄️</div>
+                <h3>Cooler Líquido 240mm</h3>
+                <p>Precio: $110</p>
+                <p class="cuotas">6 cuotas de $18</p>
+                <p>Refrigeración líquida silenciosa</p>
+                <button>Ver</button>
             </div>
 
             <div class="producto">
-                <img src="ssd_1tb-removebg-preview.png" alt="SSD 1TB">
-                <h3>SSD 1TB</h3>
-                <p>Precio: $120</p>
-                <p>Almacenamiento rápido</p>
-                <button>Comprar</button>
+                <span class="oferta oferta-40">40% OFF</span>
+                <div class="producto-placeholder">💼</div>
+                <h3>Gabinete ATX RGB Mid Tower</h3>
+                <p>Precio: $95</p>
+                <p class="cuotas">6 cuotas de $16</p>
+                <p>Vidrio templado y flujo de aire óptimo</p>
+                <p class="envio-gratis">Envío gratis</p>
+                <button>Ver</button>
             </div>
         </div>
     </div>
