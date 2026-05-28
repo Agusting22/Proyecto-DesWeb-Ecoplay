@@ -205,7 +205,7 @@ nav a {
     inset: 0;
     width: 78%;
     height: 100%;
-    background-image: url('../assets/monitor\ rojo.png');
+    background-image: url('../assets/monitorcolor.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -296,6 +296,7 @@ nav a {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: auto;
     color: #E8E9EB;
@@ -533,7 +534,7 @@ nav a {
 }
 
 img {
-    width: 100%;
+    width: 70%;
     height: 140px;
     object-fit: cover;
     border-radius: 8px;
@@ -643,6 +644,40 @@ img {
     background-color: #E30613;
     color: #ffffff;
     box-shadow: 0 6px 18px rgba(227, 6, 19, 0.5);
+}
+
+.barra-monitor-imagen {
+    width: 200px;
+    height: auto;
+    margin: 15px 0;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.producto-mouse img {
+    width: 150px !important;
+    height: auto !important;
+}
+
+.producto-fuente img {
+    width: 150px !important;
+    height: auto !important;
+}
+
+.producto-ryzen img {
+    width: 150px !important;
+    height: auto !important;
+}
+
+.producto-auriculares img {
+    width: 150px !important;
+    height: auto !important;
+}
+
+.producto-gabinete img {
+    width: 150px !important;
+    height: auto !important;
 }
 
 footer {
