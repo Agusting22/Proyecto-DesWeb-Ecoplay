@@ -188,12 +188,11 @@ nav a {
 
 .barra-promocional {
     position: relative;
-    background: linear-gradient(135deg, #E30613 0%, #8a040c 100%);
     padding: 0;
     display: flex;
     align-items: center;
     width: 100%;
-    height: 500px;
+    height: 600px;
     margin: 0 0 50px 0;
     border-radius: 0;
     overflow: hidden;
@@ -203,80 +202,12 @@ nav a {
 .barra-imagen {
     position: absolute;
     inset: 0;
-    width: 78%;
+    width: 100%;
     height: 100%;
-    background-image: url('../assets/monitorcolor.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../assets/WhatsApp\ Image\ 2026-06-05\ at\ 16.30.32.jpeg');
+    background-size: 100% auto;
+    background-position: top center;
     z-index: 1;
-    -webkit-mask-image: linear-gradient(to right, black 0%, black 45%, transparent 95%);
-    mask-image: linear-gradient(to right, black 0%, black 45%, transparent 95%);
-}
-
-.barra-imagen::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url('../assets/CTA.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(18px);
-    -webkit-mask-image: linear-gradient(to right, transparent 35%, black 65%, transparent 98%);
-    mask-image: linear-gradient(to right, transparent 35%, black 65%, transparent 98%);
-}
-
-.barra-contenido {
-    position: relative;
-    z-index: 2;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    width: 45%;
-    margin-left: auto;
-    padding: 60px 70px 60px 30px;
-    gap: 8px;
-}
-
-.barra-contenido h2 {
-    font-size: 42px;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 8px;
-    border: none;
-    padding: 0;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-}
-
-.barra-contenido h2::after {
-    display: none;
-}
-
-.barra-contenido p {
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 24px;
-    line-height: 1.7;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-}
-
-.barra-boton {
-    background-color: white;
-    color: #E30613;
-    border: none;
-    padding: 12px 30px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.barra-boton:hover {
-    background-color: #f0f0f0;
 }
 
 .productos {
@@ -292,7 +223,6 @@ nav a {
 
 .producto {
     background-color: #1a1f3a;
-    border: 3px solid #E30613;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -409,7 +339,11 @@ nav a {
 .cat-perifericos,
 .cat-almacenamiento,
 .cat-gabinetes,
-.cat-sillas-gamer {
+.cat-sillas-gamer,
+.monitores,
+.conectividad,
+.placas_madre,
+.Audio {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -439,10 +373,37 @@ nav a {
         url('../assets/sillaGamer.webp');
 }
 
+.monitores {
+    background-image:
+        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        url('../assets/monitorgamer.webp');
+}
+
+.conectividad {
+    background-image:
+        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        url('../assets/routergamer.png');
+}
+
+.placas_madre {
+    background-image:
+        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        url('../assets/mothergamer.jpg');
+}
+
+.Audio {
+    background-image:
+        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        url('../assets/soundbar.avif');
+}
 .cat-perifericos::before,
 .cat-almacenamiento::before,
 .cat-gabinetes::before,
-.cat-sillas-gamer::before {
+.cat-sillas-gamer::before,
+.monitores::before,
+.conectividad::before,
+.placas_madre::before,
+.Audio::before {
     background: radial-gradient(circle at 50% 50%, rgba(227, 6, 19, 0.25) 0%, transparent 70%);
     opacity: 0;
 }
@@ -450,7 +411,11 @@ nav a {
 .cat-perifericos:hover::before,
 .cat-almacenamiento:hover::before,
 .cat-gabinetes:hover::before,
-.cat-sillas-gamer:hover::before {
+.cat-sillas-gamer:hover::before,
+.monitores:hover::before,
+.conectividad:hover::before,
+.placas_madre:hover::before,
+.Audio:hover::before {
     opacity: 1;
 }
 
