@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoplay - Venta de Productos para PC</title>
-    <link rel="icon" type="image/png" href="./assets/favicon-32x32.png">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Ecoplay - Productos</title>
+    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <nav>
-        <a href="#inicio" class="nav-logo">
+        <a href="../index.html" class="nav-logo">
             <span class="nav-titulo">ECOPLAY</span>
         </a>
 
         <form class="nav-buscador" role="search" onsubmit="event.preventDefault();">
             <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
-            <button type="submit" aria-label="Buscar"><img src="assets/searchIcon.svg" alt=""></button>
+            <button type="submit" aria-label="Buscar"><img src="../assets/searchIcon.svg" alt=""></button>
         </form>
 
         <ul>
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./pages/productos.html">Productos</a></li>
-            <li><a href="./pages/contacto.html">Contacto</a></li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             <li class="nav-carrito">
                 <span class="icono-carrito">🛒</span>
                 <span class="contador-carrito" id="contadorCarrito">0</span>
@@ -36,15 +36,8 @@
 
     <header>
         <h1>Ecoplay</h1>
-        <p>Tienda de productos para PC</p>
+        <p>Todos nuestros productos</p>
     </header>
-
-    <section class="barra-promocional">
-        <div class="barra-imagen" role="img" aria-label="Banner promocional"></div>
-        <button class="carrusel-prev" aria-label="Anterior">&#8249;</button>
-        <button class="carrusel-next" aria-label="Siguiente">&#8250;</button>
-        <div class="carrusel-dots"></div>
-    </section>
 
     <div class="contenedor">
         <h2>Productos Disponibles</h2>
@@ -52,92 +45,92 @@
         <div class="productos">
             <div class="producto producto-ryzen">
                 <span class="oferta">25% OFF</span>
-                <img src="assets/ryzen7.png" alt="Procesador Ryzen 7 5700x">
+                <img src="../assets/ryzen7.png" alt="Procesador Ryzen 7 5700x">
                 <h3>Procesador Ryzen 7 5700x</h3>
                 <p>Precio: $250</p>
                 <p class="cuotas">6 cuotas de $42</p>
                 <p>Potente procesador para gaming</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Procesador Ryzen 7 5700x" data-precio="250" data-imagen="assets/ryzen7.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Procesador Ryzen 7 5700x" data-precio="250" data-imagen="../assets/ryzen7.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-grafica">
-                <img src="assets/grafica.png" alt="Tarjeta Gráfica RTX 4060">
+                <img src="../assets/grafica.png" alt="Tarjeta Gráfica RTX 4060">
                 <h3>Tarjeta Gráfica RTX 4060 MSI</h3>
                 <p>Precio: $400</p>
                 <p class="cuotas">6 cuotas de $67</p>
                 <p>Excelente para juegos 1080p</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Tarjeta Gráfica RTX 4060 MSI" data-precio="400" data-imagen="assets/grafica.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Tarjeta Gráfica RTX 4060 MSI" data-precio="400" data-imagen="../assets/grafica.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-ram">
                 <span class="oferta oferta-40">40% OFF</span>
-                <img src="assets/ram16gb.png" alt="Memoria RAM 16GB">
+                <img src="../assets/ram16gb.png" alt="Memoria RAM 16GB">
                 <h3>Memoria RAM 16GB</h3>
                 <p>Precio: $80</p>
                 <p class="cuotas">6 cuotas de $13</p>
                 <p>Memoria rápida para multitarea</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Memoria RAM 16GB" data-precio="80" data-imagen="assets/ram16gb.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Memoria RAM 16GB" data-precio="80" data-imagen="../assets/ram16gb.png">Agregar al carrito</button>
             </div>
 
             <div class="producto">
-                <img src="assets/ssd_1tb-removebg-preview.png" alt="SSD 1TB">
+                <img src="../assets/ssd_1tb-removebg-preview.png" alt="SSD 1TB">
                 <h3>SSD 1TB</h3>
                 <p>Precio: $120</p>
                 <p class="cuotas">6 cuotas de $20</p>
                 <p>Almacenamiento rápido</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="SSD 1TB" data-precio="120" data-imagen="assets/ssd_1tb-removebg-preview.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="SSD 1TB" data-precio="120" data-imagen="../assets/ssd_1tb-removebg-preview.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-fuente">
                 <span class="oferta">25% OFF</span>
-                <img src="assets/fuente.png" alt="Fuente 750W">
+                <img src="../assets/fuente.png" alt="Fuente 750W">
                 <h3>Fuente de Poder 750W 80+ Gold</h3>
                 <p>Precio: $90</p>
                 <p class="cuotas">6 cuotas de $15</p>
                 <p>Eficiencia y estabilidad garantizada</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Fuente de Poder 750W 80+ Gold" data-precio="90" data-imagen="assets/fuente.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Fuente de Poder 750W 80+ Gold" data-precio="90" data-imagen="../assets/fuente.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-monitor">
                 <span class="oferta oferta-40">40% OFF</span>
-                <img src="assets/monitorpicante.png" alt="Monitor 27 144Hz">
+                <img src="../assets/monitorpicante.png" alt="Monitor 27 144Hz">
                 <h3>Monitor 27" 144Hz QHD</h3>
                 <p>Precio: $300</p>
                 <p class="cuotas">6 cuotas de $50</p>
                 <p>Pantalla fluida para gaming</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Monitor 27 144Hz QHD" data-precio="300" data-imagen="assets/monitorpicante.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Monitor 27 144Hz QHD" data-precio="300" data-imagen="../assets/monitorpicante.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-teclado">
-                <img src="assets/tecladorgb.png" alt="Teclado Mecánico RGB">
+                <img src="../assets/tecladorgb.png" alt="Teclado Mecánico RGB">
                 <h3>Teclado Mecánico RGB</h3>
                 <p>Precio: $75</p>
                 <p class="cuotas">6 cuotas de $12</p>
                 <p>Switches azules retroiluminados</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Teclado Mecánico RGB" data-precio="75" data-imagen="assets/tecladorgb.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Teclado Mecánico RGB" data-precio="75" data-imagen="../assets/tecladorgb.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-mouse">
                 <span class="oferta">25% OFF</span>
-                <img src="assets/mousegamer.png" alt="Mouse Gamer 16000 DPI">
+                <img src="../assets/mousegamer.png" alt="Mouse Gamer 16000 DPI">
                 <h3>Mouse Gamer 16000 DPI</h3>
                 <p>Precio: $50</p>
                 <p class="cuotas">6 cuotas de $8</p>
                 <p>Sensor óptico de alta precisión</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Mouse Gamer 16000 DPI" data-precio="50" data-imagen="assets/mousegamer.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Mouse Gamer 16000 DPI" data-precio="50" data-imagen="../assets/mousegamer.png">Agregar al carrito</button>
             </div>
         </div>
 
@@ -194,47 +187,47 @@
         <div class="productos productos-resto">
             <div class="producto producto-auriculares">
                 <span class="oferta oferta-40">40% OFF</span>
-                <img src="assets/auriculares.png" alt="Auriculares Gaming 7.1">
+                <img src="../assets/auriculares.png" alt="Auriculares Gaming 7.1">
                 <h3>Auriculares Gaming 7.1</h3>
                 <p>Precio: $65</p>
                 <p class="cuotas">6 cuotas de $11</p>
                 <p>Sonido envolvente con micrófono</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Auriculares Gaming 7.1" data-precio="65" data-imagen="assets/auriculares.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Auriculares Gaming 7.1" data-precio="65" data-imagen="../assets/auriculares.png">Agregar al carrito</button>
             </div>
 
             <div class="producto">
-                <img src="assets/mother.png" alt="Motherboard B550 ATX">
+                <img src="../assets/mother.png" alt="Motherboard B550 ATX">
                 <h3>Motherboard B550 ATX</h3>
                 <p>Precio: $180</p>
                 <p class="cuotas">6 cuotas de $30</p>
                 <p>Compatible con Ryzen serie 5000</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Motherboard B550 ATX" data-precio="180" data-imagen="assets/mother.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Motherboard B550 ATX" data-precio="180" data-imagen="../assets/mother.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-cooler">
                 <span class="oferta">25% OFF</span>
-                <img src="assets/coleer.png" alt="Cooler Líquido 240mm">
+                <img src="../assets/coleer.png" alt="Cooler Líquido 240mm">
                 <h3>Cooler Líquido 240mm</h3>
                 <p>Precio: $110</p>
                 <p class="cuotas">6 cuotas de $18</p>
                 <p>Refrigeración líquida silenciosa</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Cooler Líquido 240mm" data-precio="110" data-imagen="assets/coleer.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Cooler Líquido 240mm" data-precio="110" data-imagen="../assets/coleer.png">Agregar al carrito</button>
             </div>
 
             <div class="producto producto-gabinete">
                 <span class="oferta oferta-40">40% OFF</span>
-                <img src="assets/gabinete.png" alt="Gabinete ATX RGB Mid Tower">
+                <img src="../assets/gabinete.png" alt="Gabinete ATX RGB Mid Tower">
                 <h3>Gabinete ATX RGB Mid Tower</h3>
                 <p>Precio: $95</p>
                 <p class="cuotas">6 cuotas de $16</p>
                 <p>Vidrio templado y flujo de aire óptimo</p>
                 <p class="envio-gratis">Envío gratis</p>
                 <button class="btn-ver">Ver</button>
-                <button class="btn-agregar" data-nombre="Gabinete ATX RGB Mid Tower" data-precio="95" data-imagen="assets/gabinete.png">Agregar al carrito</button>
+                <button class="btn-agregar" data-nombre="Gabinete ATX RGB Mid Tower" data-precio="95" data-imagen="../assets/gabinete.png">Agregar al carrito</button>
             </div>
         </div>
     </div>
@@ -244,7 +237,7 @@
         <p>Contacto: info@ecoplay.com | Teléfono: +34 900 123 456</p>
     </footer>
 
-    <script src="index.js"></script>
-    <script src="carrito.js"></script>
+    <script src="../index.js"></script>
+    <script src="../carrito.js"></script>
 </body>
 </html>

@@ -420,49 +420,49 @@ nav a {
 
 .cat-perifericos {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/Perifericos.jpg');
 }
 
 .cat-almacenamiento {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/memoria.jpg');
 }
 
 .cat-gabinetes {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/gabinete.jpg');
 }
 
 .cat-sillas-gamer {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/sillaGamer.webp');
 }
 
 .monitores {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/monitorgamer.webp');
 }
 
 .conectividad {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/routergamer.png');
 }
 
 .placas_madre {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/mothergamer.jpg');
 }
 
 .Audio {
     background-image:
-        linear-gradient(180deg, rgba(12, 16, 43, 0.45) 0%, rgba(12, 16, 43, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 16, 43, 0.15) 0%, rgba(12, 16, 43, 0.65) 100%),
         url('../assets/soundbar.avif');
 }
 .cat-perifericos::before,
@@ -723,4 +723,543 @@ footer {
     font-size: 12px;
     position: relative;
     border-top: 2px solid #E30613;
+}
+
+/* Carrito en el navbar */
+.nav-carrito {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-carrito:hover {
+    background-color: rgba(227, 6, 19, 0.2);
+}
+
+.icono-carrito {
+    font-size: 24px;
+}
+
+.contador-carrito {
+    background-color: #E30613;
+    color: white;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    min-width: 28px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contador-carrito:hover {
+    background-color: #b00410;
+}
+
+/* Botón "Ver" */
+.btn-ver {
+    background-color: #f5f5f5;
+    color: #E30613;
+    cursor: default;
+}
+
+/* Botón "Agregar al carrito" */
+.btn-agregar {
+    background-color: #E30613;
+    color: #ffffff;
+    border: 2px solid #E30613;
+    padding: 12px;
+    font-size: 12px;
+    align-self: center;
+    margin-top: 8px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #b00410;
+    box-shadow: 0 6px 18px rgba(227, 6, 19, 0.7);
+    transform: translateY(-2px);
+}
+
+.btn-agregar:active {
+    transform: translateY(0);
+}
+
+/* Modal - Ventanita para elegir cantidad */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+
+.modal-contenido {
+    background-color: #1a1f3a;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #E30613;
+    box-shadow: 0 8px 32px rgba(227, 6, 19, 0.5);
+}
+
+.modal-contenido h2 {
+    color: #E8E9EB;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#inputCantidad {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #E30613;
+    border-radius: 8px;
+    background-color: #0C102B;
+    color: #E8E9EB;
+    font-size: 16px;
+    text-align: center;
+}
+
+#inputCantidad:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.3);
+}
+
+#btnConfirmar,
+#btnCancelar {
+    padding: 12px 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+#btnConfirmar {
+    background-color: #E30613;
+    color: white;
+}
+
+#btnConfirmar:hover {
+    background-color: #b00410;
+    transform: translateY(-2px);
+}
+
+#btnCancelar {
+    background-color: #444;
+    color: white;
+}
+
+#btnCancelar:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Sección Contacto */
+.contacto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+    padding: 0 40px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .contacto-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+    }
+}
+
+.contacto-info h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: #E30613;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.contacto-info > p {
+    font-size: 14px;
+    color: #b8c0d0;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.contacto-datos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contacto-datos li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    color: #E8E9EB;
+}
+
+.contacto-icono {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.contacto-form {
+    background-color: #1a1f3a;
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid rgba(227, 6, 19, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-grupo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #b8c0d0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    background-color: #0C102B;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #E8E9EB;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    outline: none;
+    resize: vertical;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+    color: rgba(232, 233, 235, 0.4);
+}
+
+.form-grupo select option {
+    background-color: #1a1f3a;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: #E30613;
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.18);
+}
+
+.btn-enviar {
+    background-color: #E30613;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 4px;
+}
+
+.btn-enviar:hover {
+    background-color: #b00410;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(227, 6, 19, 0.5);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.form-exito {
+    display: none;
+    text-align: center;
+    color: #2ecc71;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+/* Dropdown carrito */
+.carrito-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 320px;
+    background-color: #1a1f3a;
+    border: 1px solid rgba(227, 6, 19, 0.4);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+    z-index: 2000;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.carrito-dropdown.visible {
+    display: flex;
+}
+
+.carrito-titulo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    color: #E8E9EB;
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    letter-spacing: 1px;
+}
+
+.carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.carrito-lista::-webkit-scrollbar {
+    width: 4px;
+}
+
+.carrito-lista::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carrito-lista::-webkit-scrollbar-thumb {
+    background: rgba(227, 6, 19, 0.4);
+    border-radius: 4px;
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: #b8c0d0;
+    font-size: 13px;
+    padding: 24px 0;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    transition: background-color 0.2s ease;
+}
+
+.carrito-item:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.carrito-item img {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #0C102B;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.carrito-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+}
+
+.carrito-item-nombre {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E8E9EB;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carrito-item-detalle {
+    font-size: 13px;
+    color: #E30613;
+    font-weight: 700;
+}
+
+.carrito-item-eliminar {
+    background: none;
+    border: none;
+    color: rgba(232, 233, 235, 0.35);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    flex-shrink: 0;
+    width: auto !important;
+    margin-top: 0 !important;
+    align-self: auto;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.carrito-item-eliminar:hover {
+    color: #E30613;
+    background-color: rgba(227, 6, 19, 0.12);
+    box-shadow: none;
+}
+
+.carrito-total {
+    font-size: 14px;
+    font-weight: 700;
+    color: #E8E9EB;
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: right;
+}
+
+/* Popover cantidad inline */
+.cantidad-popover {
+    display: none;
+    position: fixed;
+    background-color: #1a1f3a;
+    border: 1px solid rgba(227, 6, 19, 0.5);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.cantidad-popover.visible {
+    display: flex;
+}
+
+.cantidad-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(227, 6, 19, 0.5);
+}
+
+.cantidad-popover label {
+    font-size: 11px;
+    color: #b8c0d0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cantidad-popover input {
+    background-color: #0C102B;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: #E8E9EB;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.cantidad-popover input:focus {
+    border-color: #E30613;
+}
+
+.cantidad-popover-botones {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-popover-confirmar,
+.btn-popover-cancelar {
+    flex: 1;
+    padding: 7px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    width: auto !important;
+    margin-top: 0 !important;
+    box-shadow: none;
+}
+
+.btn-popover-confirmar {
+    background-color: #E30613;
+    color: #fff;
+}
+
+.btn-popover-confirmar:hover {
+    background-color: #b00410;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-popover-cancelar {
+    background-color: #2a2f50;
+    color: #E8E9EB;
+}
+
+.btn-popover-cancelar:hover {
+    background-color: #353b60;
+    transform: none;
+    box-shadow: none;
 }
