@@ -144,6 +144,7 @@ nav a:hover {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 36px;
 }
 
@@ -155,6 +156,8 @@ nav a {
 
 nav li {
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -1162,104 +1165,4 @@ footer {
     padding: 14px 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: right;
-}
-
-/* Popover cantidad inline */
-.cantidad-popover {
-    display: none;
-    position: fixed;
-    background-color: #1a1f3a;
-    border: 1px solid rgba(227, 6, 19, 0.5);
-    border-radius: 10px;
-    padding: 12px 14px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-    z-index: 3000;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 180px;
-}
-
-.cantidad-popover.visible {
-    display: flex;
-}
-
-.cantidad-popover::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: rgba(227, 6, 19, 0.5);
-}
-
-.cantidad-popover label {
-    font-size: 11px;
-    color: #b8c0d0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.cantidad-popover input {
-    background-color: #0C102B;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 6px;
-    padding: 8px 10px;
-    color: #E8E9EB;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    outline: none;
-    width: 100%;
-    text-align: center;
-    transition: border-color 0.2s ease;
-}
-
-.cantidad-popover input:focus {
-    border-color: #E30613;
-}
-
-.cantidad-popover-botones {
-    display: flex;
-    gap: 6px;
-}
-
-.btn-popover-confirmar,
-.btn-popover-cancelar {
-    flex: 1;
-    padding: 7px 0;
-    border: none;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s ease, transform 0.15s ease;
-    width: auto !important;
-    margin-top: 0 !important;
-    box-shadow: none;
-}
-
-.btn-popover-confirmar {
-    background-color: #E30613;
-    color: #fff;
-}
-
-.btn-popover-confirmar:hover {
-    background-color: #b00410;
-    transform: none;
-    box-shadow: none;
-}
-
-.btn-popover-cancelar {
-    background-color: #2a2f50;
-    color: #E8E9EB;
-}
-
-.btn-popover-cancelar:hover {
-    background-color: #353b60;
-    transform: none;
-    box-shadow: none;
 }

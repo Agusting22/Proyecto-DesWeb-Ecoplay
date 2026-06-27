@@ -4,7 +4,7 @@
   <img src="assets/logo.png" alt="Ecoplay Logo" width="180"/>
 </p>
 
-**Ecoplay** es una tienda online de productos gamer y tecnología. Desarrollada como trabajo práctico para la materia Diseño Web.
+**Ecoplay** es una tienda online de productos gamer y tecnología. Desarrollada como trabajo práctico para la materia Diseño y Desarrollo Web.
 
 ## Páginas
 

@@ -1,18 +1,12 @@
+// ===== Carrito de compras =====
+
+// Acá guardamos los productos. Cada producto es un objeto:
+// { nombre, precio, imagen, cantidad }
 let carrito = [];
-const MAX_POR_PRODUCTO = 100;
-let popoverEl = null;
 
-function guardarCarrito() {
-    localStorage.setItem('ecoplay-carrito', JSON.stringify(carrito));
-}
+// --- Cálculos ---
 
-function cargarCarrito() {
-    let guardado = localStorage.getItem('ecoplay-carrito');
-    if (guardado) {
-        carrito = JSON.parse(guardado);
-    }
-}
-
+// Cuántos productos hay en total (sumando las cantidades)
 function totalItems() {
     let total = 0;
     for (let i = 0; i < carrito.length; i++) {
@@ -21,6 +15,7 @@ function totalItems() {
     return total;
 }
 
+// Cuánto cuesta todo el carrito
 function totalPrecio() {
     let total = 0;
     for (let i = 0; i < carrito.length; i++) {
@@ -29,6 +24,15 @@ function totalPrecio() {
     return total;
 }
 
+// Arma la ruta de la imagen para que funcione desde cualquier página.
+// Nos quedamos solo con el nombre del archivo y le ponemos "/assets/" adelante.
+function rutaImagen(imagen) {
+    return '/assets/' + imagen.split('/').pop();
+}
+
+// --- Mostrar en pantalla ---
+
+// Escribe el número del carrito (puede haber varios contadores en la página)
 function actualizarContador() {
     let contadores = document.querySelectorAll('#contadorCarrito');
     for (let i = 0; i < contadores.length; i++) {
@@ -36,163 +40,102 @@ function actualizarContador() {
     }
 }
 
-function renderDropdown() {
+// Dibuja la lista de productos dentro del desplegable del carrito
+function mostrarCarrito() {
     let lista = document.getElementById('carritoLista');
-    let totalEl = document.getElementById('carritoTotal');
-    if (!lista || !totalEl) return;
+    let total = document.getElementById('carritoTotal');
+    if (!lista || !total) return;
 
     lista.innerHTML = '';
 
     if (carrito.length === 0) {
         lista.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío</p>';
-        totalEl.textContent = '';
+        total.textContent = '';
         return;
     }
 
     for (let i = 0; i < carrito.length; i++) {
-        let item = carrito[i];
-        let div = document.createElement('div');
-        div.className = 'carrito-item';
-        div.innerHTML =
-            '<img src="' + item.imagen + '" alt="' + item.nombre + '">' +
+        let producto = carrito[i];
+        let fila = document.createElement('div');
+        fila.className = 'carrito-item';
+        fila.innerHTML =
+            '<img src="' + rutaImagen(producto.imagen) + '" alt="' + producto.nombre + '">' +
             '<div class="carrito-item-info">' +
-                '<span class="carrito-item-nombre">' + item.nombre + '</span>' +
-                '<span class="carrito-item-detalle">x' + item.cantidad + ' — $' + (item.precio * item.cantidad) + '</span>' +
+                '<span class="carrito-item-nombre">' + producto.nombre + '</span>' +
+                '<span class="carrito-item-detalle">x' + producto.cantidad + ' — $' + (producto.precio * producto.cantidad) + '</span>' +
             '</div>' +
-            '<button class="carrito-item-eliminar" data-nombre="' + item.nombre + '">✕</button>';
-        lista.appendChild(div);
+            '<button class="carrito-item-eliminar" data-nombre="' + producto.nombre + '">✕</button>';
+        lista.appendChild(fila);
     }
 
-    totalEl.textContent = 'Total: $' + totalPrecio();
+    total.textContent = 'Total: $' + totalPrecio();
+}
 
-    let botonesEliminar = lista.querySelectorAll('.carrito-item-eliminar');
-    for (let j = 0; j < botonesEliminar.length; j++) {
-        botonesEliminar[j].addEventListener('click', function() {
-            let nombre = this.getAttribute('data-nombre');
-            carrito = carrito.filter(function(p) { return p.nombre !== nombre; });
-            guardarCarrito();
-            actualizarContador();
-            renderDropdown();
-        });
+// --- Acciones ---
+
+// Agrega un producto al carrito (si ya estaba, le suma 1)
+function agregarProducto(nombre, precio, imagen) {
+    let encontrado = false;
+    for (let i = 0; i < carrito.length; i++) {
+        if (carrito[i].nombre === nombre) {
+            carrito[i].cantidad += 1;
+            encontrado = true;
+        }
     }
-}
-
-function cerrarPopover() {
-    if (popoverEl) {
-        popoverEl.classList.remove('visible');
-        popoverEl = null;
+    if (!encontrado) {
+        carrito.push({ nombre: nombre, precio: precio, imagen: imagen, cantidad: 1 });
     }
+    actualizarContador();
+    mostrarCarrito();
 }
 
-function cerrarDropdown() {
-    let dropdown = document.getElementById('carritoDropdown');
-    if (dropdown) dropdown.classList.remove('visible');
+// Saca un producto del carrito por su nombre
+function eliminarProducto(nombre) {
+    let nuevoCarrito = [];
+    for (let i = 0; i < carrito.length; i++) {
+        if (carrito[i].nombre !== nombre) {
+            nuevoCarrito.push(carrito[i]);
+        }
+    }
+    carrito = nuevoCarrito;
+    actualizarContador();
+    mostrarCarrito();
 }
 
-cargarCarrito();
+// --- Cuando carga la página ---
+
 actualizarContador();
 
-document.addEventListener('click', function(e) {
-    let navCarrito = document.querySelector('.nav-carrito');
-    let dropdown = document.getElementById('carritoDropdown');
-
-    if (navCarrito && navCarrito.contains(e.target)) {
-        cerrarPopover();
-        renderDropdown();
-        if (dropdown) dropdown.classList.toggle('visible');
-        return;
-    }
-
-    if (dropdown && !dropdown.contains(e.target)) {
-        cerrarDropdown();
-    }
-
-    if (!e.target.closest('.btn-agregar') && !e.target.closest('.cantidad-popover')) {
-        cerrarPopover();
-    }
-});
-
+// Botones "Agregar al carrito" de cada producto
 let botonesAgregar = document.querySelectorAll('.btn-agregar');
 for (let i = 0; i < botonesAgregar.length; i++) {
-    botonesAgregar[i].addEventListener('click', function(e) {
-        e.stopPropagation();
+    botonesAgregar[i].addEventListener('click', function() {
+        let nombre = this.getAttribute('data-nombre');
+        let precio = parseInt(this.getAttribute('data-precio'));
+        let imagen = this.getAttribute('data-imagen');
+        agregarProducto(nombre, precio, imagen);
+    });
+}
 
-        let btn = this;
-        let nombre = btn.getAttribute('data-nombre');
-        let precio = parseInt(btn.getAttribute('data-precio'));
-        let imagen = btn.getAttribute('data-imagen');
-
-        let existente = null;
-        for (let k = 0; k < carrito.length; k++) {
-            if (carrito[k].nombre === nombre) { existente = carrito[k]; break; }
+// Mostrar u ocultar el desplegable al tocar el ícono del carrito
+let iconoCarrito = document.querySelector('.nav-carrito');
+if (iconoCarrito) {
+    iconoCarrito.addEventListener('click', function() {
+        let dropdown = document.getElementById('carritoDropdown');
+        if (dropdown) {
+            mostrarCarrito();
+            dropdown.classList.toggle('visible');
         }
-        let yaEnCarrito = existente ? existente.cantidad : 0;
-        let disponible = MAX_POR_PRODUCTO - yaEnCarrito;
+    });
+}
 
-        if (disponible <= 0) {
-            alert('Ya llegaste al límite de ' + MAX_POR_PRODUCTO + ' unidades para este producto.');
-            return;
+// Botón "✕" para eliminar productos (lo escuchamos en la lista)
+let listaCarrito = document.getElementById('carritoLista');
+if (listaCarrito) {
+    listaCarrito.addEventListener('click', function(e) {
+        if (e.target.classList.contains('carrito-item-eliminar')) {
+            let nombre = e.target.getAttribute('data-nombre');
+            eliminarProducto(nombre);
         }
-
-        cerrarDropdown();
-
-        if (popoverEl) {
-            popoverEl.classList.remove('visible');
-        }
-
-        if (!popoverEl || popoverEl._btn !== btn) {
-            if (!popoverEl) {
-                popoverEl = document.createElement('div');
-                popoverEl.className = 'cantidad-popover';
-                document.body.appendChild(popoverEl);
-            }
-
-            popoverEl._btn = btn;
-            popoverEl.innerHTML =
-                '<label>Cantidad (máx. ' + disponible + ')</label>' +
-                '<input type="number" class="popover-input" min="1" max="' + disponible + '" value="0">' +
-                '<div class="cantidad-popover-botones">' +
-                    '<button class="btn-popover-confirmar">Agregar</button>' +
-                    '<button class="btn-popover-cancelar">Cancelar</button>' +
-                '</div>';
-
-            popoverEl.querySelector('.btn-popover-confirmar').onclick = function(ev) {
-                ev.stopPropagation();
-                let cantidad = parseInt(popoverEl.querySelector('.popover-input').value);
-                if (isNaN(cantidad) || cantidad < 1) {
-                    alert('Ingresá una cantidad válida.');
-                    return;
-                }
-                if (cantidad > disponible) cantidad = disponible;
-
-                if (existente) {
-                    existente.cantidad += cantidad;
-                } else {
-                    carrito.push({ nombre: nombre, precio: precio, imagen: imagen, cantidad: cantidad });
-                }
-
-                guardarCarrito();
-                actualizarContador();
-                cerrarPopover();
-            };
-
-            popoverEl.querySelector('.btn-popover-cancelar').onclick = function(ev) {
-                ev.stopPropagation();
-                cerrarPopover();
-            };
-        } else {
-            let inp = popoverEl.querySelector('.popover-input');
-            inp.max = disponible;
-            inp.value = 0;
-            popoverEl.querySelector('label').textContent = 'Cantidad (máx. ' + disponible + ')';
-        }
-
-        let rect = btn.getBoundingClientRect();
-        popoverEl.style.left = (rect.left + rect.width / 2 - 90) + 'px';
-        popoverEl.style.top = (rect.top - 8) + 'px';
-        popoverEl.style.transform = 'translateY(-100%)';
-
-        popoverEl.classList.add('visible');
-        popoverEl.querySelector('.popover-input').focus();
     });
 }
